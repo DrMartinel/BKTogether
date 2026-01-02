@@ -30,9 +30,9 @@
   align-items: center;
   margin-bottom: 32px;
   padding: 20px;
-  background: linear-gradient(135deg, #00B14F 0%, #00D96F 100%);
+  background: linear-gradient(135deg, #D64545 0%, #FF8E8E 100%);
   border-radius: 20px;
-  box-shadow: 0 4px 16px rgba(0, 177, 79, 0.2);
+  box-shadow: 0 4px 16px rgba(214, 69, 69, 0.2);
 }
 
 .user-greeting h1 {
@@ -105,7 +105,7 @@
 }
 
 .credit-card.bkcredit {
-  border-left: 4px solid #00B14F;
+  border-left: 4px solid #D64545;
 }
 
 .credit-card.bkcreditplus {
@@ -187,9 +187,9 @@
 }
 
 .quick-action-btn.primary {
-  background: linear-gradient(135deg, #00B14F 0%, #00D96F 100%);
+  background: linear-gradient(135deg, #D64545 0%, #FF8E8E 100%);
   color: #ffffff;
-  box-shadow: 0 4px 16px rgba(0, 177, 79, 0.3);
+  box-shadow: 0 4px 16px rgba(214, 69, 69, 0.3);
 }
 
 .quick-action-btn.primary .action-label {
@@ -233,11 +233,100 @@
 }
 
 .stat-label {
-  font-size: 12px;
-  color: #757575;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Current Booking Section */
+.current-booking-section {
+  margin-bottom: 2rem;
+}
+
+.current-booking-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.booking-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.driver-info .driver-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.driver-details {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.driver-rating {
+  margin-right: 0.5rem;
+}
+
+.details-btn {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.booking-route {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.route-point {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.route-point:last-child {
+  margin-bottom: 0;
+}
+
+.route-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  border: 2px solid #fff;
+}
+
+.route-dot.start {
+  background-color: #D64545;
+  top: 2px;
+}
+
+.route-dot.end {
+  background-color: #f44336;
+  bottom: 2px;
+}
+
+.route-line {
+  position: absolute;
+  left: 5px;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  background-color: #e0e0e0;
+}
+
+.route-location {
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Responsive */

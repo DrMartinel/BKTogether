@@ -1,0 +1,58 @@
+.current-ride-popup {
+  position: fixed;
+  bottom: 80px; /* Adjust to be above bottom navigation */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.current-ride-popup:hover {
+  transform: translateX(-50%) scale(1.02);
+}
+
+.current-ride-header {
+  background-color: #f7f7f7;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.current-ride-header h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.current-ride-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.ride-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.ride-info p:first-child {
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.driver-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #D64545;
+}

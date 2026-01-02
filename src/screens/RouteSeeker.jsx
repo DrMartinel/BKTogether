@@ -5,11 +5,13 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import './RouteSeeker.css'
 import { drivers } from '../data/drivers'
 import { user } from '../data/user'
+import BottomNavigation from '../components/BottomNavigation'
+import BookingConfirmationDialog from '../components/BookingConfirmationDialog'
 
 const accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN
 const center = [105.8342, 21.0285] // Hanoi, Vietnam
 
-const RouteSeeker = ({ onBack }) => {
+const RouteSeeker = ({ onBack, onBookingConfirmed, activeTab, onTabChange, showRouteSeeker, onOpenRouteSeeker }) => {
   const mapRef = useRef()
   const mapContainerRef = useRef()
   const startSearchRef = useRef()
@@ -35,6 +37,7 @@ const RouteSeeker = ({ onBack }) => {
   const [isDriversListExpanded, setIsDriversListExpanded] = useState(true)
   const [showBookingScreen, setShowBookingScreen] = useState(false)
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null)
+  const [showConfirmationDialog, setShowConfirmationDialog] = useState(false)
 
   // Handle zoom changes - hide markers when zoomed in too much
   const handleZoomChange = () => {
@@ -729,7 +732,7 @@ const RouteSeeker = ({ onBack }) => {
               'line-cap': 'round',
             },
             paint: {
-              'line-color': '#00B14F',
+              'line-color': '#D64545',
               'line-width': 4,
               'line-opacity': 0.75,
             },
@@ -834,11 +837,6 @@ const RouteSeeker = ({ onBack }) => {
   return (
     <div className="home-screen">
       <div className="search-container">
-        {onBack && (
-          <button className="back-to-home-btn" onClick={onBack}>
-            ← Back
-          </button>
-        )}
         <div className="location-inputs">
           <div className="location-input-wrapper">
             <div className="location-dot start-dot"></div>
@@ -1059,13 +1057,23 @@ const RouteSeeker = ({ onBack }) => {
                 (selectedPaymentMethod === 'bkcreditplus' && convertToBKCredit(calculatePrice(selectedDriver.totalDistance)) > user.bkCreditPlus.balance)
               }
               onClick={() => {
-                console.log('Booking confirmed:', {
-                  driver: selectedDriver.driver.name,
+                const bookingDetails = {
+                  driver: selectedDriver.driver,
                   price: calculatePrice(selectedDriver.totalDistance),
-                  paymentMethod: selectedPaymentMethod
-                })
-                // Here you would typically send booking to backend
-                alert(`Booking confirmed! Driver: ${selectedDriver.driver.name}, Price: ${calculatePrice(selectedDriver.totalDistance).toLocaleString('vi-VN')} ₫`)
+                  paymentMethod: selectedPaymentMethod,
+                  route: {
+                    distance: selectedDriver.totalDistance * 1000, // convert km to meters
+                    duration: selectedDriver.totalDuration * 60, // convert minutes to seconds
+                    start: startLocation,
+                    end: endLocation,
+                  },
+                }
+                console.log('Booking confirmed:', bookingDetails)
+
+                if (onBookingConfirmed) {
+                  onBookingConfirmed(bookingDetails)
+                }
+                setShowConfirmationDialog(true)
               }}
             >
               Confirm Booking
@@ -1073,7 +1081,29 @@ const RouteSeeker = ({ onBack }) => {
           </div>
         </div>
       )}
-      <div className="map-container" ref={mapContainerRef} />
+      <div ref={mapContainerRef} className="map-container" />
+      {showConfirmationDialog && (
+        <BookingConfirmationDialog
+          booking={{
+            driver: selectedDriver.driver,
+            start: startLocation,
+            end: endLocation,
+          }}
+          onClose={() => {
+            setShowConfirmationDialog(false)
+            // The onBack prop will navigate back to the home screen
+            if (onBack) onBack()
+          }}
+        />
+      )}
+
+      {/* Bottom Navigation */}
+      <BottomNavigation
+        activeTab={activeTab}
+        onTabChange={onTabChange}
+        onOpenRouteSeeker={onOpenRouteSeeker}
+        showRouteSeeker={showRouteSeeker}
+      />
     </div>
   )
 }

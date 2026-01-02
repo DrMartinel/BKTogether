@@ -1,0 +1,158 @@
+.booking-detail-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f8;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-detail-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.booking-detail-header .back-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.booking-detail-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.booking-detail-content {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.driver-profile {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.driver-avatar-large {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #D64545;
+  margin-bottom: 10px;
+}
+
+.driver-profile h3 {
+  margin: 0 0 5px 0;
+  font-size: 22px;
+}
+
+.driver-profile p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.driver-rating {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.trip-info-card,
+.pricing-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.trip-info-card h4,
+.pricing-card h4 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.route-details {
+  position: relative;
+}
+
+.route-point {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.route-icon {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.route-icon.start {
+  background-color: #D64545;
+}
+
+.route-icon.end {
+  background-color: #D64545;
+}
+
+.route-line {
+  position: absolute;
+  left: 7px;
+  top: 15px;
+  bottom: 15px;
+  width: 2px;
+  background-color: #ddd;
+  z-index: -1;
+}
+
+.trip-summary {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.trip-summary p,
+.price-details p {
+  margin: 0 0 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.booking-detail-bottom {
+  position: sticky;
+  bottom: 0;
+  padding: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), #fff);
+  display: flex;
+  justify-content: center;
+}
+
+.message-driver-btn {
+  background: #D64545;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}

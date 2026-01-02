@@ -1,6 +1,6 @@
 import './BottomNavigation.css'
 
-const BottomNavigation = ({ activeTab, onTabChange }) => {
+const BottomNavigation = ({ activeTab, onTabChange, onOpenRouteSeeker, showRouteSeeker }) => {
   return (
     <nav className="bottom-navigation">
       <button
@@ -26,34 +26,18 @@ const BottomNavigation = ({ activeTab, onTabChange }) => {
         <span>Home</span>
       </button>
       <button
-        className={`nav-item ${activeTab === 'orders' ? 'active' : ''}`}
-        onClick={() => onTabChange('orders')}
+        className={`nav-item ${showRouteSeeker ? 'active' : ''}`}
+        onClick={() => {
+          if (onOpenRouteSeeker) onOpenRouteSeeker()
+        }}
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M9 5H7C5.89543 5 5 5.89543 5 7V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V7C19 5.89543 18.1046 5 17 5H15"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M9 5C9 4.46957 9.21071 3.96086 9.58579 3.58579C9.96086 3.21071 10.4696 3 11 3H13C13.5304 3 14.0391 3.21071 14.4142 3.58579C14.7893 3.96086 15 4.46957 15 5V7H9V5Z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M9 12H15"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="M12 2C8 6 6 9 6 12C6 16 9 20 12 22C15 20 18 16 18 12C18 9 16 6 12 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <circle cx="12" cy="12" r="2" stroke="currentColor" strokeWidth="1.5" />
         </svg>
-        <span>Orders</span>
+        <span>Route</span>
       </button>
+      {/* Orders tab removed */}
       <button
         className={`nav-item ${activeTab === 'services' ? 'active' : ''}`}
         onClick={() => onTabChange('services')}
@@ -67,7 +51,7 @@ const BottomNavigation = ({ activeTab, onTabChange }) => {
             strokeLinecap="round"
           />
         </svg>
-        <span>Services</span>
+        <span>Top Up</span>
       </button>
       <button
         className={`nav-item ${activeTab === 'profile' ? 'active' : ''}`}

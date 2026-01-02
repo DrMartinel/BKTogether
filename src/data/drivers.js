@@ -75,9 +75,15 @@ const generateDriver = (id) => {
       coordinates: coord,
       name: `Waypoint ${idx + 1}`,
     })),
-    rating: (4 + Math.random()).toFixed(1), // 4.0 to 5.0
+    rating: 4 + Math.random(), // 4.0 to 5.0
     vehicleType: ['Car', 'Motorcycle', 'Car', 'Car', 'Motorcycle'][Math.floor(Math.random() * 5)],
     available: Math.random() > 0.2, // 80% available
+    avatar: `https://i.pravatar.cc/150?u=${id}`,
+    vehicle: {
+      make: 'Honda',
+      model: 'Wave',
+      licensePlate: `${Math.floor(Math.random() * 90 + 10)} - ${String.fromCharCode(65 + Math.floor(Math.random() * 26))}1 ${Math.floor(Math.random() * 90000 + 10000)}`,
+    },
   }
 }
 
@@ -128,9 +134,15 @@ for (let row = 0; row < gridRows; row++) {
           coordinates: coord,
           name: `Waypoint ${idx + 1}`,
         })),
-        rating: (4 + Math.random()).toFixed(1), // 4.0 to 5.0
+        rating: Math.round(Math.random() * 10) / 10 + 4, // 4.0 to 5.0 (number)
         vehicleType: ['Car', 'Motorcycle', 'Car', 'Car', 'Motorcycle'][Math.floor(Math.random() * 5)],
         available: Math.random() > 0.2, // 80% available
+        avatar: `https://i.pravatar.cc/150?u=${driverId}`,
+        vehicle: {
+          make: 'Honda',
+          model: 'Wave',
+          licensePlate: `${Math.floor(Math.random() * 90 + 10)} - ${String.fromCharCode(65 + Math.floor(Math.random() * 26))}1 ${Math.floor(Math.random() * 90000 + 10000)}`,
+        },
       })
     }
   }

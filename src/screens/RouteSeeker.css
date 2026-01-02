@@ -120,7 +120,7 @@
 }
 
 .start-dot {
-  background: linear-gradient(135deg, #00B14F 0%, #00D96F 100%);
+  background: linear-gradient(135deg, #FF6B6B 0%, #00D96F 100%);
 }
 
 .end-dot {
@@ -161,7 +161,7 @@
   outline: none !important;
   border: none !important;
   box-shadow: none !important;
-  color: #00B14F !important;
+  color: #FF6B6B !important;
 }
 
 .search-box-wrapper input:focus::placeholder {
@@ -198,7 +198,7 @@
 
 .route-info {
   position: absolute;
-  bottom: 90px;
+  bottom: 0.5vh;
   left: 0;
   right: 0;
   z-index: 10;
@@ -223,7 +223,7 @@
 }
 
 .confirm-route-btn {
-  background-color: #00B14F;
+  background-color: #FF6B6B;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -248,7 +248,7 @@
 }
 
 .marker-start {
-  background-color: #00B14F;
+  background-color: #FF6B6B;
 }
 
 .marker-end {
@@ -256,7 +256,7 @@
 }
 
 .marker-user {
-  background-color: #00B14F;
+  background-color: #FF6B6B;
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -323,7 +323,7 @@
 
 .drivers-list {
   position: absolute;
-  bottom: 90px;
+  bottom: 0.5vh;
   left: 0;
   right: 0;
   z-index: 10;
@@ -524,7 +524,7 @@
 }
 
 .select-driver-btn {
-  background-color: #00B14F;
+  background-color: #FF6B6B;
   color: #ffffff;
   border: none;
   margin-top: 2px;
@@ -554,7 +554,7 @@
 /* Booking Screen */
 .booking-screen {
   position: absolute;
-  bottom: 90px;
+  bottom: 0.5vh;
   left: 0;
   right: 0;
   z-index: 10;
@@ -595,7 +595,7 @@
 }
 
 .back-btn:active {
-  color: #00B14F;
+  color: #FF6B6B;
 }
 
 .booking-header h3 {
@@ -744,7 +744,7 @@
 }
 
 .payment-method.selected {
-  border-color: #00B14F;
+  border-color: #FF6B6B;
   background-color: #f0fdf4;
 }
 
@@ -799,7 +799,7 @@
 }
 
 .payment-check {
-  color: #00B14F;
+  color: #FF6B6B;
   font-size: 20px;
   font-weight: 700;
   flex-shrink: 0;
@@ -808,7 +808,7 @@
 }
 
 .confirm-booking-btn {
-  background-color: #00B14F;
+  background-color: #FF6B6B;
   color: #ffffff;
   border: none;
   border-radius: 8px;

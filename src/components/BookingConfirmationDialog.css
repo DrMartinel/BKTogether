@@ -1,0 +1,74 @@
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dialog-content {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 320px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dialog-content h3 {
+  margin-top: 0;
+  color: #FF6B6B;
+}
+
+.driver-details-dialog {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin: 20px 0;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.driver-details-dialog img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.driver-details-dialog div {
+  display: flex;
+  flex-direction: column;
+}
+
+.driver-details-dialog strong {
+  font-size: 16px;
+}
+
+.driver-details-dialog span {
+  font-size: 14px;
+  color: #666;
+}
+
+.dialog-content button {
+  background-color: #D64545;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.dialog-content button:hover {
+  background-color: #A33131;
+}
