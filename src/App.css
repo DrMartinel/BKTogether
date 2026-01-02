@@ -21,8 +21,6 @@
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  max-width: 428px;
-  margin: 0 auto;
   position: relative;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
@@ -32,8 +30,9 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: calc(100% - 70px);
-  padding-bottom: env(safe-area-inset-bottom);
+  /* Account for bottom navigation - it handles its own safe area */
+  padding-bottom: 70px;
+  box-sizing: border-box;
 }
 
 /* Mobile-first responsive design */
