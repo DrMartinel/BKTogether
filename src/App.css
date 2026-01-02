@@ -27,7 +27,8 @@
 
 .app-content {
   flex: 1;
-  overflow: hidden;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
   position: relative;
   width: 100%;
   /* Account for bottom navigation - it handles its own safe area */
